@@ -87,8 +87,8 @@ class Beranda extends Component
         $post->addition_information = $this->addition_information;
         $post->position = $this->position;
         $post->status = $this->status;
-        $post->join_date = $this->join_date;
-        $post->end_date = $this->end_date;
+        $post->join_date = date('Y-m-d', strtotime($this->join_date));
+        $post->end_date = date('Y-m-d', strtotime($this->end_date));
         $post->contract_duration = $this->contract_duration;
         if($this->cv) {
             $post->employee_files->cv = $this->cv;
