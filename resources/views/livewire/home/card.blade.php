@@ -8,7 +8,7 @@
                     </div>
                     <div class="col-auto">
                         <h6 class="text-muted m-b-10">Work Leaves Report</h6>
-                        <h2 class="m-b-0">{{ (@$workleaves_count) ? $workleaves_count : '0' }}</h2>
+                        <h2 class="m-b-0">{{ (@$work_leaves_reports) ? $work_leaves_reports : '0' }}</h2>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                         <i class="icofont icofont-warning-alt f-30 text-c-yellow"></i>
                     </div>
                     <div class="col-auto">
-                        <h6 class="text-muted m-b-10">Internship Status</h6>
+                        <h6 class="text-muted m-b-10">Internship Status (Month)</h6>
                         <h2 class="m-b-0">{{ (@$internship_status) ? $internship_status : '0' }}</h2>
                     </div>
                 </div>

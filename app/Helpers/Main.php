@@ -1,6 +1,7 @@
 <?php
 
-function forCalendar($datetime){
+function forCalendar($datetime)
+{
     foreach ($datetime as $k => $v)
     {
         $datetime[$k]['title'] = $datetime[$k]['event_name'];
@@ -48,4 +49,10 @@ function get_x_months_to_the_future( $base_time = null, $months = 1 )
         $x_months_to_the_future = strtotime( date("Ym01His", $x_months_to_the_future) . " -1 day" );
 
     return $x_months_to_the_future;
+}
+
+function convertDatetimeToInputDate($date)
+{
+    $result = date('Y-m-d\TH:i', strtotime($date));
+    return $result;
 }
