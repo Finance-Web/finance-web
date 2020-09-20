@@ -8,11 +8,6 @@
             <div class="modal-body mx-3">
                 <div class="modal-body mx-3">
                     <div class="md-form mb-3">
-                        <label>Event Name <span class="text-c-red">*</span></label>
-                        <input type="text" class="form-control" wire:model="event_name">
-                        @error('event_name') <span class="text-danger error">{{ $message }}</span>@enderror
-                    </div>
-                    <div class="md-form mb-3">
                         <label>Choose number of employees <span class="text-c-red">*</span></label>
                         @if($employees)
                         <input class="form-control" type="number" wire:model="employee_count">

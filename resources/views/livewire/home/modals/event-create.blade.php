@@ -6,30 +6,32 @@
                 <h4 class="modal-title w-100 font-weight-bold">Create Event</h4>
             </div>
             <div class="modal-body mx-3">
-                <div class="md-form mb-3">
-                    <label>Event Name <span class="text-c-red">*</span></label>
-                    <input type="text" class="form-control" wire:model="event_name">
-                    @error('event_name') <span class="text-danger error">{{ $message }}</span>@enderror
-                </div>
-                <div class="md-form mb-3">
-                    <label>Choose number of employees <span class="text-c-red">*</span></label>
-                    @if($employees)
-                    <input class="form-control" type="number" wire:model="employee_count" max="{{ $employees->count() }}">
-                    @for($f = 0; $f < $employee_count; $f++)
-                    <select class="form-control" wire:model="employee_ids.{{ $f }}">
-                        @foreach($employees as $emp)
-                        <option value="{{ $emp->id }}">{{ $emp->full_name }}</option>
-                        @endforeach
-                    </select>
-                    @endfor
-                    @error('employee_count') <span class="text-danger error">{{ $message }}</span>@enderror
-                    @else
-                    <input type="text" class="form-control" value="PLEASE, GO BACK & INSERT EMPLOYEE INFO FIRST!!" readonly>
-                    @endif
+                <div class="md-form row mb-3">
+                    <div class="col-lg-6">
+                        <label>Event Name <span class="text-c-red">*</span></label>
+                        <input type="text" class="form-control form-control-sm" wire:model="event_name">
+                        @error('event_name') <span class="text-danger error">{{ $message }}</span>@enderror
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Choose number of employees <span class="text-c-red">*</span></label>
+                        @if($employees)
+                        <input class="form-control form-control-sm" type="number" wire:model="employee_count" max="{{ $employees->count() }}">
+                        @for($f = 0; $f < $employee_count; $f++)
+                        <select class="form-control form-control-sm" wire:model="employee_ids.{{ $f }}">
+                            @foreach($employees as $emp)
+                            <option value="{{ $emp->id }}">{{ $emp->full_name }}</option>
+                            @endforeach
+                        </select>
+                        @endfor
+                        @error('employee_count') <span class="text-danger error">{{ $message }}</span>@enderror
+                        @else
+                        <input type="text" class="form-control" value="PLEASE, GO BACK & INSERT EMPLOYEE INFO FIRST!!" readonly>
+                        @endif
+                    </div>
                 </div>
                 <div class="md-form mb-3">
                     <label>Event Type <span class="text-c-red">*</span></label>
-                    <select class="form-control" wire:model="event_type">
+                    <select class="form-control form-control-sm" wire:model="event_type">
                         <option value="">-- SELECT --</option>
                         <option value="One Time">One Time</option>
                         <option value="Recurring Monthly">Recurring Monthly</option>
@@ -58,14 +60,14 @@
                     <textarea class="form-control form-control-sm" wire:model="event_details"></textarea>
                     @error('event_details') <span class="text-danger error">{{ $message }}</span>@enderror
                 </div>
-                <div class="modal-footer d-flex justify-content-right">
-                    <div wire:loading.remove wire:target="store">
-                        <button wire:click.prevent="cancel" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">Cancel</button>
-                        <button wire:click.prevent="store" class="btn btn-primary waves-effect waves-light"><i class="icofont icofont-upload"></i> Store</button>
-                    </div>
-                    <div wire:loading wire:target="store" wire:loading.class="btn btn-info waves-effect waves-light disabled">
-                        <i class="icofont icofont-cloud-upload"></i> Loading..
-                    </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-right">
+                <div wire:loading.remove wire:target="store">
+                    <button wire:click.prevent="cancel" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">Cancel</button>
+                    <button wire:click.prevent="store" class="btn btn-primary waves-effect waves-light"><i class="icofont icofont-upload"></i> Store</button>
+                </div>
+                <div wire:loading wire:target="store" wire:loading.class="btn btn-info waves-effect waves-light disabled">
+                    <i class="icofont icofont-cloud-upload"></i> Loading..
                 </div>
             </div>
         </div>

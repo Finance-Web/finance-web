@@ -70,7 +70,7 @@
                             >
                                 <!-- File Input -->
                                 <input type="file" class="form-control-file border" wire:model="ktp">
-    
+
                                 <!-- Progress Bar -->
                                 <div x-show="isUploading">
                                     <progress max="100" x-bind:value="progress"></progress>
@@ -89,7 +89,7 @@
                             >
                                 <!-- File Input -->
                                 <input type="file" class="form-control-file border" wire:model="cv">
-    
+
                                 <!-- Progress Bar -->
                                 <div x-show="isUploading">
                                     <progress max="100" x-bind:value="progress"></progress>
@@ -108,7 +108,7 @@
                             >
                                 <!-- File Input -->
                                 <input type="file" class="form-control-file border" wire:model="certificate">
-    
+
                                 <!-- Progress Bar -->
                                 <div x-show="isUploading">
                                     <progress max="100" x-bind:value="progress"></progress>
