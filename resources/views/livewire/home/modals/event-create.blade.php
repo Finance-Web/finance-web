@@ -17,6 +17,8 @@
                         @if($employees)
                         <input class="form-control form-control-sm" type="number" wire:model="employee_count" max="{{ $employees->count() }}">
                         @for($f = 0; $f < $employee_count; $f++)
+                    </div>
+                    <div class="col-lg-6">
                         <select class="form-control form-control-sm" wire:model="employee_ids.{{ $f }}">
                             @foreach($employees as $emp)
                             <option value="{{ $emp->id }}">{{ $emp->full_name }}</option>
